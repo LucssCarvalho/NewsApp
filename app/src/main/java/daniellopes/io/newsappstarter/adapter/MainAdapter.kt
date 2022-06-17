@@ -1,36 +1,48 @@
 package daniellopes.io.newsappstarter.adapter
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import daniellopes.io.newsappstarter.R
 import daniellopes.io.newsappstarter.model.Article
+import kotlinx.android.synthetic.main.item_news.view.*
 
 class MainAdapter : RecyclerView.Adapter<MainAdapter.ArticleViewHolder>() {
 
     inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
-    private val differCallback = object: DiffUtil.ItemCallback<Article>(){
+    private val differCallback = object : DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
-            TODO("Not yet implemented")
+            return oldItem.url == newItem.url
         }
 
         override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean {
-            TODO("Not yet implemented")
+            return oldItem.url == newItem.url
         }
-
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
-        TODO("Not yet implemented")
-    }
+    private val differ = AsyncListDiffer(this, differCallback)
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder =
+        ArticleViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_news, parent, false)
+        )
+
+    override fun getItemCount(): Int = differ.currentList.size
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
-        TODO("Not yet implemented")
+       val article = differ.currentList[position]
+        holder.itemView.apply {
+            Glide.with(this).load(article.urlToImage).into(ivArticleImage)
+            tvTitle.text = article.source?.name
+            tvSource.text = article.author ?: article.source?.name
+            tvDescription.text = article.description
+            tvPublishedAt.text = article.publishedAt
+        }
     }
 
 }
