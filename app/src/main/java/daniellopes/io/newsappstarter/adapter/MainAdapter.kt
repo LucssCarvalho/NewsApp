@@ -35,14 +35,25 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ArticleViewHolder>() {
     override fun getItemCount(): Int = differ.currentList.size
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
-       val article = differ.currentList[position]
+        val article = differ.currentList[position]
         holder.itemView.apply {
             Glide.with(this).load(article.urlToImage).into(ivArticleImage)
             tvTitle.text = article.source?.name
             tvSource.text = article.author ?: article.source?.name
             tvDescription.text = article.description
             tvPublishedAt.text = article.publishedAt
+
+            setOnClickListener {
+                onItemClickListener?.let { click ->
+                    click(article)
+                }
+            }
         }
     }
 
+    private var onItemClickListener: ((Article) -> Unit)? = null
+
+    fun setOnClickListener(listener: (Article) -> Unit) {
+        onItemClickListener = listener
+    }
 }
