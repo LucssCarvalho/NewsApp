@@ -27,5 +27,4 @@ interface NewsAPI {
         @Query("apiKey")
         api: String = API_KEY
     ): Response<NewsResponse>
-
 }

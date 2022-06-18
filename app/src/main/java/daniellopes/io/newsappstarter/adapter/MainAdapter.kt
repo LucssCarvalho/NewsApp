@@ -25,7 +25,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ArticleViewHolder>() {
         }
     }
 
-    private val differ = AsyncListDiffer(this, differCallback)
+    val differ = AsyncListDiffer(this, differCallback)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder =
         ArticleViewHolder(
@@ -38,7 +38,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ArticleViewHolder>() {
         val article = differ.currentList[position]
         holder.itemView.apply {
             Glide.with(this).load(article.urlToImage).into(ivArticleImage)
-            tvTitle.text = article.author ?: "Autor não encontrado"
+            tvTitle.text = article.author ?:  article.source?.name
             tvSource.text = article.source?.name ?: article.author
             tvDescription.text = article.description
             tvPublishedAt.text = article.publishedAt
