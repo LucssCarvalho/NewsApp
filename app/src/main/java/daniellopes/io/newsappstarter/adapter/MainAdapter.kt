@@ -38,8 +38,8 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ArticleViewHolder>() {
         val article = differ.currentList[position]
         holder.itemView.apply {
             Glide.with(this).load(article.urlToImage).into(ivArticleImage)
-            tvTitle.text = article.source?.name
-            tvSource.text = article.author ?: article.source?.name
+            tvTitle.text = article.author ?: "Autor não encontrado"
+            tvSource.text = article.source?.name ?: article.author
             tvDescription.text = article.description
             tvPublishedAt.text = article.publishedAt
 

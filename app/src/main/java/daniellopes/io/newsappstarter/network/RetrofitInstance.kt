@@ -1,6 +1,5 @@
-package daniellopes.io.newsappstarter
+package daniellopes.io.newsappstarter.network
 
-import daniellopes.io.newsappstarter.network.NewsAPI
 import daniellopes.io.newsappstarter.util.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
