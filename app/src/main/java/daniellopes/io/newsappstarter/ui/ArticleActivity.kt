@@ -1,11 +1,12 @@
-package daniellopes.io.newsappstarter
+package daniellopes.io.newsappstarter.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import daniellopes.io.newsappstarter.R
 
-class SearchActivity : AppCompatActivity() {
+class ArticleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search)
+        setContentView(R.layout.activity_article)
     }
 }
