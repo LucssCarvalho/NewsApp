@@ -1,4 +1,4 @@
-package daniellopes.io.newsappstarter.presenter.news
+package daniellopes.io.newsappstarter.presenter
 
 import daniellopes.io.newsappstarter.model.Article
 

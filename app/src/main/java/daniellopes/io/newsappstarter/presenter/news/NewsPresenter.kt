@@ -2,6 +2,7 @@ package daniellopes.io.newsappstarter.presenter.news
 
 import daniellopes.io.newsappstarter.model.NewsResponse
 import daniellopes.io.newsappstarter.model.data.NewsDataSource
+import daniellopes.io.newsappstarter.presenter.ViewHome
 
 class NewsPresenter(
     private val view: ViewHome.View,

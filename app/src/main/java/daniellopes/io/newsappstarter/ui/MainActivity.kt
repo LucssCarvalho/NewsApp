@@ -12,7 +12,7 @@ import daniellopes.io.newsappstarter.adapter.MainAdapter
 import daniellopes.io.newsappstarter.model.Article
 import daniellopes.io.newsappstarter.model.data.NewsDataSource
 import daniellopes.io.newsappstarter.presenter.news.NewsPresenter
-import daniellopes.io.newsappstarter.presenter.news.ViewHome
+import daniellopes.io.newsappstarter.presenter.ViewHome
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AbstractActivity(), ViewHome.View {

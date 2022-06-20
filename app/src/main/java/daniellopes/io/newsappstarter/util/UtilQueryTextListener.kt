@@ -10,13 +10,13 @@ import kotlinx.coroutines.launch
 
 class UtilQueryTextListener(
     lifecycle: Lifecycle,
-    private val utilQueryTextListener: (String) -> Unit
+    private val utilQueryTextListener: (String?) -> Unit
 ) : SearchView.OnQueryTextListener, LifecycleObserver {
 
     private val coroutineScope = lifecycle.coroutineScope
     private var searchJob: Job? = null
 
-    override fun onQueryTextSubmit(p0: String?): Boolean {
+    override fun onQueryTextSubmit(query: String?): Boolean {
         return false
     }
 
