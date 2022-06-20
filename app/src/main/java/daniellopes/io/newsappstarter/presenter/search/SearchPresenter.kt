@@ -8,6 +8,7 @@ class SearchPresenter(
     private val view: ViewHome.View,
     private val dataSource: NewsDataSource
 ) : SearchHome.Presenter {
+
     override fun search(term: String) {
         this.view.showProgressBar()
         this.dataSource.searchNew(term, this)

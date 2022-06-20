@@ -60,7 +60,7 @@ class SearchActivity : AbstractActivity(), ViewHome.View {
     }
 
     override fun showProgressBar() {
-        rvProgressBar.visibility = View.VISIBLE
+        rvProgressBarSearch.visibility = View.VISIBLE
     }
 
     override fun showFailure(message: String) {
@@ -68,7 +68,7 @@ class SearchActivity : AbstractActivity(), ViewHome.View {
     }
 
     override fun hideProgressBar() {
-        rvProgressBar.visibility = View.INVISIBLE
+        rvProgressBarSearch.visibility = View.INVISIBLE
     }
 
     override fun showArticles(articles: List<Article>) {
