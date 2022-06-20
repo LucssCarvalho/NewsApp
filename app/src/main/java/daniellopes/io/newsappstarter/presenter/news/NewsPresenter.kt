@@ -4,7 +4,7 @@ import daniellopes.io.newsappstarter.model.NewsResponse
 import daniellopes.io.newsappstarter.model.data.NewsDataSource
 
 class NewsPresenter(
-    val view: ViewHome.View,
+    private val view: ViewHome.View,
     private val dataSource: NewsDataSource
 ) : NewsHome.Presenter {
 

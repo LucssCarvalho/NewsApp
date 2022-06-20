@@ -1,13 +1,13 @@
 package daniellopes.io.newsappstarter.presenter.search
 
-import daniellopes.io.newsappstarter.presenter.news.NewsPresenter
+import daniellopes.io.newsappstarter.model.NewsResponse
 
 interface SearchHome {
 
     interface Presenter {
         fun search(term: String)
 
-        fun onSuccess(newsResponse: NewsPresenter)
+        fun onSuccess(newsResponse: NewsResponse)
 
         fun onError(message: String)
 
