@@ -40,7 +40,7 @@ class SearchActivity : AbstractActivity(), ViewHome.View {
                 newText?.let { query ->
                     if (query.isNotEmpty()) {
                         presenter.search(query)
-                        rvProgressBarSearch.visibility = View.VISIBLE
+                        showProgressBar()
                     }
                 }
             }
