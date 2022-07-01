@@ -1,23 +1,23 @@
 package newsappstarter.io.carvalho.ui
 
-import android.os.Bundle
 import android.webkit.WebViewClient
-import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
 import daniellopes.io.carvalho.util.Constants.Companion.ARTICLE_KEY
 import newsappstarter.databinding.ActivityArticleBinding
 import newsappstarter.io.carvalho.model.Article
 
-class ArticleActivity : AppCompatActivity() {
+class ArticleActivity : AbstractActivity() {
 
     private lateinit var article: Article
 
     private lateinit var binding: ActivityArticleBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun getLayout(): ViewBinding {
         binding = ActivityArticleBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        return binding
+    }
+
+    override fun onInject() {
         getArticle()
         binding.webView.apply {
             webViewClient = WebViewClient()
@@ -25,6 +25,7 @@ class ArticleActivity : AppCompatActivity() {
                 loadUrl(url)
             }
         }
+
     }
 
     private fun getArticle() {

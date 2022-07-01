@@ -1,22 +1,23 @@
 package newsappstarter.io.carvalho.ui
+
 import NewsDataSource
 import NewsPresenter
+import ViewHome
 import android.content.Intent
-import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewbinding.ViewBinding
 import daniellopes.io.carvalho.util.Constants.Companion.ARTICLE_KEY
 import newsappstarter.R
 import newsappstarter.databinding.ActivityMainBinding
 import newsappstarter.io.carvalho.adapter.MainAdapter
 import newsappstarter.io.carvalho.model.Article
 
-class MainActivity : AppCompatActivity(), ViewHome.View {
+class MainActivity : AbstractActivity(), ViewHome.View {
 
     private val mainAdapter by lazy {
         MainAdapter()
@@ -26,13 +27,13 @@ class MainActivity : AppCompatActivity(), ViewHome.View {
 
     private lateinit var binding: ActivityMainBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val dataSource = NewsDataSource()
+    override fun getLayout(): ViewBinding {
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        return binding
+    }
 
+    override fun onInject() {
+        val dataSource = NewsDataSource()
         presenter = NewsPresenter(this, dataSource)
         presenter.requestAll()
         configRecycle()
