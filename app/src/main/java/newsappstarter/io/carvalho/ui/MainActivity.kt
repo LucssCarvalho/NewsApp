@@ -88,12 +88,6 @@ class MainActivity : AppCompatActivity(), ViewHome.View {
                     startActivity(this)
                 }
             }
-
-            R.id.favorite -> {
-                Intent(this, FavoriteActivity::class.java).apply {
-                    startActivity(this)
-                }
-            }
         }
         return super.onOptionsItemSelected(item)
     }
