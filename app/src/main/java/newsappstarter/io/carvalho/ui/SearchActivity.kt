@@ -1,20 +1,22 @@
 package newsappstarter.io.carvalho.ui
+
 import NewsDataSource
 import SearchPresenter
+import ViewHome
 import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import daniellopes.io.carvalho.util.Constants.Companion.ARTICLE_KEY
 import daniellopes.io.carvalho.util.UtilQueryTextListener
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_search.*
-import newsappstarter.R
+import newsappstarter.databinding.ActivitySearchBinding
 import newsappstarter.io.carvalho.adapter.MainAdapter
 import newsappstarter.io.carvalho.model.Article
 
-class SearchActivity : AbstractActivity(), ViewHome.View {
+class SearchActivity : AppCompatActivity(), ViewHome.View {
 
     private val mainAdapter by lazy {
         MainAdapter()
@@ -22,10 +24,15 @@ class SearchActivity : AbstractActivity(), ViewHome.View {
 
     private lateinit var presenter: SearchPresenter
 
-    override fun getLayout(): Int = R.layout.activity_search
+    private lateinit var binding: ActivitySearchBinding
 
-    override fun onInject() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         val dataSource = NewsDataSource()
+        binding = ActivitySearchBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
         presenter = SearchPresenter(this, dataSource)
         configRecycler()
         search()
@@ -33,7 +40,7 @@ class SearchActivity : AbstractActivity(), ViewHome.View {
     }
 
     private fun search() {
-        searchNews.setOnQueryTextListener(
+        binding.searchNews.setOnQueryTextListener(
             UtilQueryTextListener(
                 this.lifecycle
             ) { newText ->
@@ -48,7 +55,7 @@ class SearchActivity : AbstractActivity(), ViewHome.View {
     }
 
     private fun configRecycler() {
-        with(rvSearch) {
+        with(binding.rvSearch) {
             adapter = mainAdapter
             layoutManager = LinearLayoutManager(this@SearchActivity)
             addItemDecoration(
@@ -69,7 +76,7 @@ class SearchActivity : AbstractActivity(), ViewHome.View {
     }
 
     override fun showProgressBar() {
-        rvProgressBarSearch.visibility = View.VISIBLE
+        binding.rvProgressBarSearch.visibility = View.VISIBLE
     }
 
     override fun showFailure(message: String) {
@@ -77,7 +84,7 @@ class SearchActivity : AbstractActivity(), ViewHome.View {
     }
 
     override fun hideProgressBar() {
-        rvProgressBarSearch.visibility = View.INVISIBLE
+        binding.rvProgressBarSearch.visibility = View.INVISIBLE
     }
 
     override fun showArticles(articles: List<Article>) {

@@ -1,26 +1,30 @@
 package newsappstarter.io.carvalho.ui
 
+import android.os.Bundle
 import android.webkit.WebViewClient
+import androidx.appcompat.app.AppCompatActivity
 import daniellopes.io.carvalho.util.Constants.Companion.ARTICLE_KEY
-import kotlinx.android.synthetic.main.activity_article.*
-import newsappstarter.R
+import newsappstarter.databinding.ActivityArticleBinding
 import newsappstarter.io.carvalho.model.Article
 
-class ArticleActivity : AbstractActivity() {
+class ArticleActivity : AppCompatActivity() {
 
     private lateinit var article: Article
 
-    override fun getLayout(): Int = R.layout.activity_article
+    private lateinit var binding: ActivityArticleBinding
 
-    override fun onInject() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityArticleBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         getArticle()
-        webView.apply {
+        binding.webView.apply {
             webViewClient = WebViewClient()
             article.url?.let { url ->
                 loadUrl(url)
             }
         }
-
     }
 
     private fun getArticle() {
