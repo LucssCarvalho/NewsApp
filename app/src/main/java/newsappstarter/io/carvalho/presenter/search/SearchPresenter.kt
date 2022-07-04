@@ -1,5 +1,6 @@
 
-import newsappstarter.io.carvalho.model.NewsResponse
+import newsappstarter.io.carvalho.repository.NewsDataSource
+import newsappstarter.io.carvalho.data.model.NewsResponse
 
 class SearchPresenter(
     private val view: ViewHome.View,
