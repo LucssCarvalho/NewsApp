@@ -9,8 +9,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewbinding.ViewBinding
-import daniellopes.io.carvalho.util.Constants.Companion.ARTICLE_KEY
-import daniellopes.io.carvalho.util.UtilQueryTextListener
+import newsappstarter.io.carvalho.util.Constants.Companion.ARTICLE_KEY
+import newsappstarter.io.carvalho.util.UtilQueryTextListener
 import newsappstarter.databinding.ActivitySearchBinding
 import newsappstarter.io.carvalho.ui.adapter.MainAdapter
 import newsappstarter.io.carvalho.data.model.Article

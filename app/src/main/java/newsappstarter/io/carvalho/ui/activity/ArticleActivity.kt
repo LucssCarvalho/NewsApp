@@ -2,7 +2,7 @@ package newsappstarter.io.carvalho.ui.activity
 
 import android.webkit.WebViewClient
 import androidx.viewbinding.ViewBinding
-import daniellopes.io.carvalho.util.Constants.Companion.ARTICLE_KEY
+import newsappstarter.io.carvalho.util.Constants.Companion.ARTICLE_KEY
 import newsappstarter.databinding.ActivityArticleBinding
 import newsappstarter.io.carvalho.data.model.Article
 

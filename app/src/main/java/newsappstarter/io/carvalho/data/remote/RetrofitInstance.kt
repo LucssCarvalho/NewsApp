@@ -1,6 +1,6 @@
 package newsappstarter.io.carvalho.data.remote
 
-import daniellopes.io.carvalho.util.Constants.Companion.BASE_URL
+import newsappstarter.io.carvalho.util.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
