@@ -20,16 +20,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews(binding: ActivityMainBinding) {
-        navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         var navController = navHostFragment.navController
 
-        navController.addOnDestinationChangedListener { _ , destination, _ ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
             title = destination.label
         }
-         binding.bottomNavigation.apply {
-             setupWithNavController(navController = navController)
-             setOnItemReselectedListener {}
-         }
+        binding.bottomNavigation.apply {
+            setupWithNavController(navController = navController)
+            setOnItemReselectedListener {}
+        }
     }
 
 }

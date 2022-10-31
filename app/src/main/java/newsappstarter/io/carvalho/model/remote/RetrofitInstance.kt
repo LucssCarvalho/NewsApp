@@ -1,4 +1,4 @@
-package newsappstarter.io.carvalho.data.remote
+package newsappstarter.io.carvalho.model.remote
 
 import newsappstarter.io.carvalho.util.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient

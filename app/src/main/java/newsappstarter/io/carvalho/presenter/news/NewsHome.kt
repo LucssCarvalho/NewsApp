@@ -1,4 +1,6 @@
-import newsappstarter.io.carvalho.data.model.NewsResponse
+package newsappstarter.io.carvalho.presenter.news
+
+import newsappstarter.io.carvalho.model.data.NewsResponse
 
 interface NewsHome {
 

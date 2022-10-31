@@ -1,4 +1,4 @@
-package newsappstarter.io.carvalho.data.model
+package newsappstarter.io.carvalho.model.data
 
 import java.io.Serializable
 

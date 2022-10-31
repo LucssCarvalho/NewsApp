@@ -1,4 +1,4 @@
-import newsappstarter.io.carvalho.data.model.Article
+import newsappstarter.io.carvalho.model.data.Article
 
 interface ViewHome {
 

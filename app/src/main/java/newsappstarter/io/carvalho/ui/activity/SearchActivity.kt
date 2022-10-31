@@ -1,6 +1,6 @@
 package newsappstarter.io.carvalho.ui.activity
 
-import newsappstarter.io.carvalho.repository.NewsDataSource
+import newsappstarter.io.carvalho.model.data.NewsDataSource
 import SearchPresenter
 import ViewHome
 import android.content.Intent
@@ -13,7 +13,7 @@ import newsappstarter.io.carvalho.util.Constants.Companion.ARTICLE_KEY
 import newsappstarter.io.carvalho.util.UtilQueryTextListener
 import newsappstarter.databinding.ActivitySearchBinding
 import newsappstarter.io.carvalho.ui.adapter.MainAdapter
-import newsappstarter.io.carvalho.data.model.Article
+import newsappstarter.io.carvalho.model.data.Article
 
 class SearchActivity : AbstractActivity(), ViewHome.View {
 

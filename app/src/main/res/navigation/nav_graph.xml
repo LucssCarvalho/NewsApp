@@ -23,6 +23,6 @@
         android:label="News" >
         <argument
             android:name="article"
-            app:argType="newsappstarter.io.carvalho.data.model.Article" />
+            app:argType="newsappstarter.io.carvalho.model.data.Article" />
     </fragment>
 </navigation>

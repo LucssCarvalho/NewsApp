@@ -1,7 +1,7 @@
-package newsappstarter.io.carvalho.data.remote
+package newsappstarter.io.carvalho.model.remote
 
 import newsappstarter.io.carvalho.util.Constants.Companion.API_KEY
-import newsappstarter.io.carvalho.data.model.NewsResponse
+import newsappstarter.io.carvalho.model.data.NewsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -2,9 +2,9 @@ package newsappstarter.io.carvalho.ui.activity
 
 import android.webkit.WebViewClient
 import androidx.viewbinding.ViewBinding
-import newsappstarter.io.carvalho.util.Constants.Companion.ARTICLE_KEY
 import newsappstarter.databinding.ActivityArticleBinding
-import newsappstarter.io.carvalho.data.model.Article
+import newsappstarter.io.carvalho.model.data.Article
+import newsappstarter.io.carvalho.util.Constants.Companion.ARTICLE_KEY
 
 class ArticleActivity : AbstractActivity() {
 

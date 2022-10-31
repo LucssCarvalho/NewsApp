@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import newsappstarter.databinding.ItemNewsBinding
-import newsappstarter.io.carvalho.data.model.Article
+import newsappstarter.io.carvalho.model.data.Article
 
 class MainAdapter : RecyclerView.Adapter<MainAdapter.ArticleViewHolder>() {
 
