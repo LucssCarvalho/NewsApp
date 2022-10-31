@@ -11,11 +11,11 @@ import newsappstarter.io.carvalho.model.data.Article
 interface ArticleDao {
 
     @Insert(onConflict = REPLACE)
-     fun updateInsert(article: Article): Long
+    fun updateInsert(article: Article): Long
 
     @Query("SELECT * FROM articles")
     fun getAll(): List<Article>
 
     @Delete
-     fun delete(article: Article)
+    fun delete(article: Article)
 }
