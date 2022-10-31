@@ -16,7 +16,7 @@
             android:name=".io.carvalho.ui.SearchActivity"
             android:exported="true" />
         <activity
-            android:name=".io.carvalho.ui.FavoriteActivity"
+            android:name=".io.carvalho.ui.AbstractActivity"
             android:exported="true" />
         <activity
             android:name=".io.carvalho.ui.ArticleActivity"

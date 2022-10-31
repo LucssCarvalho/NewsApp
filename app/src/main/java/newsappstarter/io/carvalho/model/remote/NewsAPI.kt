@@ -1,4 +1,4 @@
-package newsappstarter.io.carvalho.network
+package newsappstarter.io.carvalho.model.remote
 
 import newsappstarter.io.carvalho.util.Constants.Companion.API_KEY
 import newsappstarter.io.carvalho.model.data.NewsResponse

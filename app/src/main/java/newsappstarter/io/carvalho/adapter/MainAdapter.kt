@@ -6,10 +6,8 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.item_news.view.*
-import newsappstarter.R
 import newsappstarter.databinding.ItemNewsBinding
-import newsappstarter.io.carvalho.model.Article
+import newsappstarter.io.carvalho.model.data.Article
 
 class MainAdapter : RecyclerView.Adapter<MainAdapter.ArticleViewHolder>() {
 

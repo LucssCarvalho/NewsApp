@@ -1,4 +1,4 @@
-import newsappstarter.io.carvalho.model.NewsResponse
+import newsappstarter.io.carvalho.model.data.NewsResponse
 
 interface NewsHome {
 

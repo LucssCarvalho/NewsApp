@@ -1,4 +1,4 @@
-package daniellopes.io.carvalho.util
+package newsappstarter.io.carvalho.util
 
 class Constants {
     companion object {

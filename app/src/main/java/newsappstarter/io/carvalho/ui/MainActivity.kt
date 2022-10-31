@@ -1,6 +1,5 @@
 package newsappstarter.io.carvalho.ui
 
-import NewsDataSource
 import NewsPresenter
 import ViewHome
 import android.content.Intent
@@ -11,11 +10,12 @@ import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewbinding.ViewBinding
-import daniellopes.io.carvalho.util.Constants.Companion.ARTICLE_KEY
+import newsappstarter.io.carvalho.util.Constants.Companion.ARTICLE_KEY
 import newsappstarter.R
 import newsappstarter.databinding.ActivityMainBinding
 import newsappstarter.io.carvalho.adapter.MainAdapter
-import newsappstarter.io.carvalho.model.Article
+import newsappstarter.io.carvalho.model.data.Article
+import newsappstarter.io.carvalho.model.data.NewsDataSource
 
 class MainActivity : AbstractActivity(), ViewHome.View {
 
@@ -33,7 +33,7 @@ class MainActivity : AbstractActivity(), ViewHome.View {
     }
 
     override fun onInject() {
-        val dataSource = NewsDataSource()
+        val dataSource = NewsDataSource(this)
         presenter = NewsPresenter(this, dataSource)
         presenter.requestAll()
         configRecycle()
@@ -54,7 +54,7 @@ class MainActivity : AbstractActivity(), ViewHome.View {
     }
 
     private fun clickAdapter() {
-        mainAdapter.setOnClickListener { article ->
+        mainAdapter.setOnClickListener { article: Article ->
             val intent = Intent(this, ArticleActivity::class.java)
             intent.putExtra(ARTICLE_KEY, article)
             startActivity(intent)

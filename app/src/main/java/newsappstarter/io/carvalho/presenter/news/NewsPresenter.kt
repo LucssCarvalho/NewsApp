@@ -1,6 +1,5 @@
-
-import newsappstarter.io.carvalho.model.NewsResponse
-
+import newsappstarter.io.carvalho.model.data.NewsDataSource
+import newsappstarter.io.carvalho.model.data.NewsResponse
 
 class NewsPresenter(
     private val view: ViewHome.View,
@@ -9,7 +8,7 @@ class NewsPresenter(
 
     override fun requestAll() {
         this.view.showProgressBar()
-        this.dataSource.getABreakingNews(this)
+        this.dataSource.getBreakingNews(this)
     }
 
     override fun onSuccess(newsResponse: NewsResponse) {

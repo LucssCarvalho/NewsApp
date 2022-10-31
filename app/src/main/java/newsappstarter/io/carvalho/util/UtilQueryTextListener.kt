@@ -1,4 +1,4 @@
-package daniellopes.io.carvalho.util
+package newsappstarter.io.carvalho.util
 
 import android.widget.SearchView
 import androidx.lifecycle.Lifecycle
