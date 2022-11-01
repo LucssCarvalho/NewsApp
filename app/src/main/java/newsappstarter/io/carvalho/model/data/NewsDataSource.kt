@@ -48,7 +48,7 @@ class NewsDataSource(context: Context) {
     }
 
     fun saveArticle(article: Article) {
-        GlobalScope.launch(Dispatchers.Main) {
+        GlobalScope.launch(Dispatchers.IO) {
             newsRepository.updateInsert(article)
         }
     }
